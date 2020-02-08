@@ -1,0 +1,28 @@
+.main {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../content/assets/landsky.jpg");
+  background-size: cover;
+  padding: 20vh 20vw;
+}
+
+.q1 {
+  font-style: italic;
+}
+
+.q2 {
+  font-style: italic;
+  text-align: end;
+}
+
+.gogogo {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.status {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
