@@ -1,0 +1,26 @@
+name: gh-pages
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    env:
+      NODE_ENV: production
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node
+      - name: build
+        run: npm ci && npm run build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./public
+          publish_branch: master
+          user_name: James Ren
+          user_email: renshujian0@hotmail.com
+          commit_message: ${{ github.event.head_commit.message }}
