@@ -7,8 +7,8 @@ module.exports = {
       },
     },
   ],
-  // Customize your site metadata:
   siteMetadata: {
+    lang: `zh-Hans-CN`, // no effect
     title: `书剑温州录`,
     author: `任书剑`,
     description: `我们的征途是星辰大海`,
@@ -17,6 +17,10 @@ module.exports = {
       {
         name: `github`,
         url: `https://github.com/renshujian`,
+      },
+      {
+        name: ` `,
+        url: `/#覆盖gatsby-theme-blog-core/gatsby-config.js中的siteMetadata.social[1]`,
       },
     ],
   },
