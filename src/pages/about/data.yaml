@@ -1,0 +1,158 @@
+birth: 1985-08-10
+attributes:
+- name:
+    zh-cn: 力量
+    en-us: STR
+  value: 2000
+- name:
+    zh-cn: 耐力
+    en-us: VIT
+  value: 3000
+- name:
+    zh-cn: 智力
+    en-us: INT
+  value: 5000
+- name:
+    zh-cn: 意志
+    en-us: SPI
+  value: 5000
+- name:
+    zh-cn: 敏捷
+    en-us: AGI
+  value: 1000
+- name:
+    zh-cn: 幸运
+    en-us: LUC
+  value: 9999
+jobs:
+- name:
+    zh-cn: 软件工程师
+    en-us: Software Engineer
+  attributes:
+  - name:
+      zh-cn: 计算机体系结构
+      en-us: Computer Architecture
+    value: 5
+  - name:
+      zh-cn: 操作系统
+      en-us: Operating System
+    value: 100
+  - name:
+      zh-cn: 编程语言
+      en-us: Programming Language
+    value: 500
+  - name:
+      zh-cn: 算法与数据结构
+      en-us: Algorithms and Data Structures
+    value: 100
+  - name:
+      zh-cn: 软件设计
+      en-us: Software Design
+    value: 500
+  - name:
+      zh-cn: 软件工程
+      en-us: Software Engineering
+    value: 500
+- name:
+    zh-cn: 阿宅
+    en-us: OTAKU
+  attributes: []
+- name:
+    zh-cn: 化学家
+    en-us: Chemist
+  attributes: []
+skills:
+- name:
+    zh-cn: 英语
+    en-us: English
+  scopes:
+  - common
+  - language
+  icon: chat
+  progress: 0.4
+- name:
+    zh-cn: 日语
+    en-us: Japanese
+  scopes:
+  - common
+  - language
+  icon: chat
+  progress: 0.4
+- name:
+    zh-cn: JavaScript
+    en-us: JavaScript
+  scopes:
+  - software
+  - programming language
+  icon:
+  progress: 0.6
+- name:
+    zh-cn: Node.js
+    en-us: Node.js
+  scopes:
+  - software
+  - runtime
+  icon:
+  progress: 0.4
+- name:
+    zh-cn: C#
+    en-us: C#
+  scopes:
+  - software
+  - programming language
+  icon:
+  progress: 0.2
+- name:
+    zh-cn: .NET
+    en-us: .NET
+  scopes:
+  - software
+  - runtime
+  icon:
+  progress: 0.1
+- name:
+    zh-cn: Java
+    en-us: Java
+  scopes:
+  - software
+  - programming language
+  icon:
+  progress: 0.2
+- name:
+    zh-cn: DevOps
+    en-us: DevOps
+  scopes:
+  - software
+  - methodology
+  icon:
+  progress: 0.3
+- name:
+    zh-cn: Kubernetes
+    en-us: Kubernetes
+  scopes:
+  - software
+  - platform
+  icon:
+  progress: 0.4
+achievements:
+- name:
+    zh-cn: 计算机技术与软件专业技术资格 中级 软件设计师
+    en-us: Software Designer, Qualification of Computer and Software Professional
+  date: 2017-05-20
+- name:
+    zh-cn: 会计从业资格证书
+    en-us: Certificate of Accounting Profession
+  date: 2017-02-14
+- name:
+    zh-cn: 日本语能力测试1级
+    en-us: Japanese-Language Proficiency Test Level 1
+    ja-jp: 日本語能力試験1級
+  date: 2009-08-28
+- name:
+    zh-cn: 北京化工大学应用化学理学学士
+    en-us: Bachelor, Applied Chemistry, BUCT
+  date: 2008-07-02
+- name:
+    zh-cn: 大学英语四级考试
+    en-us: CET4
+  date: 2006-06-00
