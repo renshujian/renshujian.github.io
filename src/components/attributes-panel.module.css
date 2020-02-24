@@ -1,9 +1,9 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
+  justify-content: space-between;
 }
 
 .root > * {
-  margin: 0.2em;
+  width: 48%;
 }

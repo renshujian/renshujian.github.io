@@ -1,8 +1,12 @@
-.root > * {
+.root {
   display: flex;
   align-items: center;
 }
 
-.root > * > * {
+.root > * {
   margin: 0 0.2em;
+}
+
+.name {
+  flex-grow: 1;
 }

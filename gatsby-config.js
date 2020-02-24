@@ -6,6 +6,13 @@ module.exports = {
         basePath: `/blog`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `profile`,
+        path: `${__dirname}/src/pages/about/profile`,
+      },
+    },
   ],
   siteMetadata: {
     lang: `zh-Hans-CN`, // no effect

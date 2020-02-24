@@ -28,6 +28,7 @@ jobs:
 - name:
     zh-cn: 软件工程师
     en-us: Software Engineer
+  scope: software
   attributes:
   - name:
       zh-cn: 计算机体系结构
@@ -56,10 +57,12 @@ jobs:
 - name:
     zh-cn: 阿宅
     en-us: OTAKU
+  scope: otaku
   attributes: []
 - name:
     zh-cn: 化学家
     en-us: Chemist
+  scope: chemistry
   attributes: []
 skills:
 - name:
@@ -155,4 +158,4 @@ achievements:
 - name:
     zh-cn: 大学英语四级考试
     en-us: CET4
-  date: 2006-06-00
+  date: 2006-06-01

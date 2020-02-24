@@ -1,4 +1,27 @@
+.dialog {
+  flex-direction: row;
+  width: 800px;
+  height: 600px;
+}
+
 .nav {
-  float: left;
+  display: flex;
+  flex-direction: column;
   width: 280px;
+  height: 600px;
+}
+
+.menu {
+  flex-grow: 1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  height: 600px;
+}
+
+.main > :last-child {
+  flex-grow: 1;
 }
