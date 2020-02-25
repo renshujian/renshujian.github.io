@@ -25,19 +25,18 @@ export default function About() {
           <RadioButtonGroup
             options={langOptions}
             selectedValue={lang}
-            onClick={e => setLang(e.target.value)}
+            onChange={setLang}
             fill={true}
           />
           <Divider />
-          <div className={style.menu}>
-            <RadioButtonGroup
-              options={panelOptions[lang]}
-              selectedValue={panel}
-              onClick={e => setPanel(e.target.value)}
-              fill={true}
-              vertical={true}
-            />
-          </div>
+          <RadioButtonGroup
+            className={style.menu}
+            options={panelOptions[lang]}
+            selectedValue={panel}
+            onChange={setPanel}
+            fill={true}
+            vertical={true}
+          />
         </nav>
         <main className={style.main}>
           <Panels panel={panel} />

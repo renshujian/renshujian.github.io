@@ -13,6 +13,7 @@
 
 .menu {
   flex-grow: 1;
+  flex-shrink: 100;
 }
 
 .main {

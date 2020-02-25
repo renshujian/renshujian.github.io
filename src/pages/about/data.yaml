@@ -44,7 +44,7 @@ jobs:
     value: 500
   - name:
       zh-cn: 算法与数据结构
-      en-us: Algorithms and Data Structures
+      en-us: Algorithms & Data Structures
     value: 100
   - name:
       zh-cn: 软件设计
