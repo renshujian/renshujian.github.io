@@ -19,7 +19,7 @@ module.exports = {
     title: `书剑温州录`,
     author: `任书剑`,
     description: `我们的征途是星辰大海`,
-    siteUrl: `https://renshujian.github.io`,
+    siteUrl: `https://booksword.online`,
     social: [
       {
         name: `github`,
