@@ -3,31 +3,38 @@ attributes:
 - name:
     zh-cn: 力量
     en-us: STR
+    ja-jp: ちから
   value: 2000
 - name:
     zh-cn: 耐力
     en-us: VIT
+    ja-jp: たいりょく
   value: 3000
 - name:
     zh-cn: 智力
     en-us: INT
+    ja-jp: ちえ
   value: 5000
 - name:
     zh-cn: 意志
     en-us: SPI
+    ja-jp: せいしん
   value: 5000
 - name:
     zh-cn: 敏捷
     en-us: AGI
+    ja-jp: きびん
   value: 1000
 - name:
     zh-cn: 幸运
     en-us: LUC
+    ja-jp: うん
   value: 9999
 jobs:
 - name:
     zh-cn: 软件工程师
     en-us: Software Engineer
+    ja-jp: ソフトウェアエンジニア
   scope: software
   attributes:
   - name:
@@ -57,17 +64,80 @@ jobs:
 - name:
     zh-cn: 阿宅
     en-us: OTAKU
+    ja-jp: オタク
   scope: otaku
-  attributes: []
+  attributes:
+  - name:
+      zh-cn: 动画
+      en-us: Animation
+      ja-jp: アニメーション
+    value: 5000
+  - name:
+      zh-cn: 漫画
+      en-us: Comics
+      ja-jp: コミックス
+    value: 1000
+  - name:
+      zh-cn: 游戏
+      en-us: Game
+      ja-jp: ゲーム
+    value: 7000
+  - name:
+      zh-cn: 小说
+      en-us: Novel
+      ja-jp: ノベル
+    value: 1000
+  - name:
+      zh-cn: 模型
+      en-us: Figure
+      ja-jp: フィギュア
+    value: 0
+  - name:
+      zh-cn: 角色扮演
+      en-us: Cosplay
+      ja-jp: コスプレ
+    value: 0
 - name:
     zh-cn: 化学家
     en-us: Chemist
+    ja-jp: 化学者
   scope: chemistry
-  attributes: []
+  attributes:
+  - name:
+      zh-cn: 无机化学
+      en-us: Inorganic Chemistry
+      ja-jp: 無機化学
+    value: 100
+  - name:
+      zh-cn: 有机化学
+      en-us: Organic Chemistry
+      ja-jp: 有機化学
+    value: 5
+  - name:
+      zh-cn: 物理化学
+      en-us: Physical Chemistry
+      ja-jp: 物理化学
+    value: 200
+  - name:
+      zh-cn: 分析化学
+      en-us: Analytical Chemistry
+      ja-jp: 分析化学
+    value: 200
+  - name:
+      zh-cn: 计算化学
+      en-us: Computational Chemistry
+      ja-jp: 計算化学
+    value: 0
+  - name:
+      zh-cn: 生物化学
+      en-us: Biochemistry
+      ja-jp: 生化学
+    value: 0
 skills:
 - name:
     zh-cn: 英语
     en-us: English
+    ja-jp: 英語
   scopes:
   - common
   - language
@@ -76,14 +146,17 @@ skills:
 - name:
     zh-cn: 日语
     en-us: Japanese
+    ja-jp: 日本語
   scopes:
   - common
   - language
+  - otaku
   icon: chat
   progress: 0.4
 - name:
     zh-cn: JavaScript
     en-us: JavaScript
+    ja-jp: JavaScript
   scopes:
   - software
   - programming language
@@ -92,6 +165,7 @@ skills:
 - name:
     zh-cn: Node.js
     en-us: Node.js
+    ja-jp: Node.js
   scopes:
   - software
   - runtime
@@ -100,6 +174,7 @@ skills:
 - name:
     zh-cn: C#
     en-us: C#
+    ja-jp: C#
   scopes:
   - software
   - programming language
@@ -108,6 +183,7 @@ skills:
 - name:
     zh-cn: .NET
     en-us: .NET
+    ja-jp: .NET
   scopes:
   - software
   - runtime
@@ -116,6 +192,7 @@ skills:
 - name:
     zh-cn: Java
     en-us: Java
+    ja-jp: Java
   scopes:
   - software
   - programming language
@@ -124,6 +201,7 @@ skills:
 - name:
     zh-cn: DevOps
     en-us: DevOps
+    ja-jp: DevOps
   scopes:
   - software
   - methodology
@@ -132,11 +210,47 @@ skills:
 - name:
     zh-cn: Kubernetes
     en-us: Kubernetes
+    ja-jp: Kubernetes
   scopes:
   - software
   - platform
   icon:
   progress: 0.4
+- name:
+    zh-cn: AWS
+    en-us: AWS
+    ja-jp: AWS
+  scopes:
+  - software
+  - platform
+  icon:
+  progress: 0.3
+- name:
+    zh-cn: 研究
+    en-us: Research
+    ja-jp: 研究
+  scopes:
+  - common
+  - chemistry
+  icon:
+  progress: 0.5
+- name:
+    zh-cn: 实验
+    en-us: Experiment
+    ja-jp: 実験
+  scopes:
+  - chemistry
+  icon:
+  progress: 0.1
+- name:
+    zh-cn: 报告
+    en-us: Report
+    ja-jp: 報告
+  scopes:
+  - common
+  - chemistry
+  icon:
+  progress: 0.2
 achievements:
 - name:
     zh-cn: 计算机技术与软件专业技术资格 中级 软件设计师

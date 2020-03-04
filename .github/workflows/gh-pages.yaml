@@ -29,6 +29,5 @@ jobs:
         env:
           GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
         run: |
-          ls -RI *module* $HOME $GITHUB_WORKSPACE
-          cd $(find $HOME -name actions_github_pages* -type d)
+          cd $HOME/actions_github_pages*
           git push git@e.coding.net:booksword/online.git ${{ env.PUBLISH_BRANCH }}:master
