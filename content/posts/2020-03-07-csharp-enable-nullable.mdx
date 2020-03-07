@@ -1,0 +1,98 @@
+---
+title: 在C#中启用可为空引用类型 (1)
+date: 2020-03-07
+tags: [c#]
+keywords: [nullable, generics, CS8618, unknown, 泛型]
+---
+import { Callout } from "@blueprintjs/core"
+
+## 问题
+
+因为有TS的经验，升级到C#8.0后信心满满地[开启可空检查][commit1]，然后掉进了类型参数坑。示例：
+
+```csharp
+public class Container<T>
+{
+    public T Value {get; set;}
+    public override string ToString() => Value.ToString();
+}
+```
+
+<Callout intent="warning">
+  Non-nullable property 'Value' is uninitialized. Consider declaring the property as nullable. [src]
+  csharp(CS8618) [3, 14]
+</Callout>
+
+<Callout intent="warning">
+  Dereference of a possibly null reference. [src]
+  csharp(CS8602) [4, 42]
+</Callout>
+
+??? 一边警告我Value属性不可为空需要初始化，另一边在我要调用Value上的方法时警告我Value可能为空。
+
+在编译器的视角，类型参数`T`是否可为空呢？
+
+## 解答
+
+让MSDN tell you。根据[文档]，因为可空值类型是`Nullable<T>`，可空引用类型是带注解的原类型，在不确定`T`是值类型还是引用类型时编译器不能正确生成`T?`的代码。
+
+不存在无约束的`T?`，也就不能将无约束的`T`视作不可空。根据[规范草案]，无约束的`T`的可空性为未知，同时接受可空和不可空警告。
+
+示例中的容器对于值的类型和可空性不做任何假设，对于可空和非可空的类型参数都应该正常工作。~~T可以改名叫Cat。~~
+
+## 修复
+
+<Callout intent="danger">
+  错误示例1，<del>程序员的观测导致T的坍缩。</del>
+  AllowNull特性在T为不可空类型时强制编译器接受可空参数。
+</Callout>
+
+```csharp
+public class Container<T>
+{
+    [System.Diagnostics.CodeAnalysis.AllowNull]
+    public T Value {get; set;} = default;
+    static void NoWarning() => new Container<string>{Value=null};
+}
+```
+
+<Callout intent="danger">
+  错误示例2，挖坑不填，害人害己。
+</Callout>
+
+```csharp
+public class Container<T>
+{
+    public T Value {get; set;} = default!;
+    static void NoWarning() => new Container<string>().Value.Equals("");
+}
+```
+
+<Callout intent="success">
+在无法确定具体类型时没有合理的初始值，只有借助外力，让知道具体类型的人传递合理的初始值
+</Callout>
+
+```csharp
+public class Container<T>
+{
+    public T Value {get; set;}
+    public Container(T value) => Value = value;
+    public override string ToString() => Value?.ToString() ?? "null";
+}
+```
+
+## 思考
+
+如果有人看了文章开头的[commit1]，会发现其中就犯了错误示例1。写作的过程整理了思路，让我发现了错误，提交了[commit2]进行修复
+
+## 参考
+
+- [文档]
+- [规范草案]
+- [stack overflow]
+
+[文档]: https://docs.microsoft.com/zh-cn/dotnet/csharp/nullable-attributes#generic-definitions-and-nullability
+[规范草案]: https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/proposals/csharp-8.0/nullable-reference-types-specification#nullability-of-types
+[stack overflow]: https://stackoverflow.com/questions/59023377/what-is-unknown-nullability-in-c-sharp-8
+[commit1]: https://github.com/renshujian/learning-algorithm/commit/3cefc1a1bfb99a188c8af5e055ee9a4fdfdf28f4
+[commit2]: https://github.com/renshujian/learning-algorithm/commit/8fadacd8c670269b533e5790fd76de149268e930
